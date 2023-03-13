@@ -1,4 +1,4 @@
-package practicaJava;
+pacpackage practicaJava;
 
 public class Practica2 {
 	
@@ -25,25 +25,36 @@ public class Practica2 {
 	//10. Escribir un programa para sumar 2 numeros sin 
 	//    usar operadores aritmeticos
 	
+	    static void sumBit(int a, int b){
+	        while (b != 0) {
+	            int suma = a ^ b;
+	            int carry = (a & b) << 1;
+	            a = suma;
+	            b = carry;
+	        }
+	        System.out.println(a);
+	    }
 	
-	
-	
+	    
+	  //11. Escribir un método para verificar si un numero positivo de 2 digitos es palindromo
+
+	    static void pali(int n){
+	    	String m=Integer.toString(n);
+	    	char e0=m.charAt(0);
+	    	char e1=m.charAt(1);
+	    	String ei=Character.toString(e1)+Character.toString(e0);
+	    	String res= m==ei ? "Es palindromo":"No es palindromo";
+	    	System.out.println(res);
+	    }
+	    
+	    
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		numPrimo(10);
+		sumBit(3,6);
+		pali(35);
+		pali(33);
 	}
 
 }
-
-
-
-//11. Escribir un método para verificar si un numero positivo de 2 digitos es palindromo
-
-//12. Sin usar loops, escribir un metodo para sumar todos los digitos de un numero donde 99 >= n >= 10
-
-//13. Escribir un método para remover espacios en blanco de un String. ej -> "Hola Mundo" -> "HolaMundo"
-
-//14. Escribir un método para invertir un String. ej -> "Hola" -> "aloH" --- Sin usar loops
-
-//15. Escribir un metodo para encontrar el factorial de un numero sin loops
